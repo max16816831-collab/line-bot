@@ -19,7 +19,7 @@ CHANNEL_ACCESS_TOKEN = 'NuKWQPd60fq1ZNU3OCioQXvGjpdXQg320cxlsmMKdSgK/d6ssiqt014c
 IMGBB_API_KEY = '6e0f692a1c9ea0933f2475a961c33a02'
 
 # 目標群組 ID（拿到 Group ID 後再填入更新）
-TARGET_GROUP_ID = 'YOUR_TARGET_GROUP_ID'
+TARGET_GROUP_ID = 'Cc02f9812adf84da53b0b86bc9c391592'
 # ===========================
 
 configuration = Configuration(access_token=CHANNEL_ACCESS_TOKEN)
