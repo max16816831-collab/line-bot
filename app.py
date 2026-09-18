@@ -43,7 +43,9 @@ def callback():
 @handler.add(MessageEvent, message=TextMessageContent)
 def handle_text(event):
     text = event.message.text.strip()
-    
+    # 1. 檢查訊息來源：如果不是來自「群組」，直接結束不轉發（排除私訊）
+    if not isinstance(event.source, GroupSource):
+        return
     # 只要訊息進來，就在日誌中印出當前群組 ID
     if isinstance(event.source, GroupSource):
         print(f"====================================")
@@ -59,7 +61,7 @@ def handle_text(event):
             line_bot_api = MessagingApi(api_client)
             push_request = PushMessageRequest(
                 to=TARGET_GROUP_ID,
-                messages=[TextMessage(text=text)]  # 原樣轉發訊息內容
+                messages=[TextMessage(text=f"轉發數字：{text}")]  # 原樣轉發訊息內容
             )
             line_bot_api.push_message(push_request)
 
